@@ -16,6 +16,8 @@ void PrintVector(vector<int> &v)
 int main()
 {
   vector<int> v1;
+  // vector<int> v1(4, 5)
+  // four numbers, default value is 5
   
   for (int i = 0; i < 10; i++)
   {
