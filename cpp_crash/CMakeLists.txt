@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.31.6)
 project(cpp_crash CXX)
 set(CMAKE_CXX_STANDARD 23)
-add_executable(main src/for-each.cpp)
+add_executable(main src/smart_pointers.cpp)
 target_include_directories(main PRIVATE include)
