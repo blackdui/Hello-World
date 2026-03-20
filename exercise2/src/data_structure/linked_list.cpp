@@ -27,8 +27,8 @@ void Initialize(Node nodes[], int len) {
   nodes[len - 1].next_id = 1;
 }
 void Show(Node nodes[], int len) {
-  for (int i = 0; i < len - 1; i++) {
-    int now = nodes[0].next_id;
+  int now = nodes[0].next_id;
+  for (int i = 0; i < len ; i++) {
     cout << nodes[now].data << " ";
     now = nodes[now].next_id;
   }
@@ -36,14 +36,15 @@ void Show(Node nodes[], int len) {
 }
 int main() {
   // 初始化
-
+  // 零号索引的下一个为开始节点 
   Initialize(nodes, 10);
   //遍历链表
-
+  Show(nodes, 10); 
   //删除节点
+    
+  // Delete(nodes, 8); 
+  // 插入节点
+  // Insert();
   
-  Delete(nodes, 8); 
-  //插入节点
-  Insert();
   return 0;
 }
