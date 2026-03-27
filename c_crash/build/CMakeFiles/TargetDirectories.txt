@@ -1,3 +1,0 @@
-/home/blackdui/Hello-World/c_crash/build/CMakeFiles/main.dir
-/home/blackdui/Hello-World/c_crash/build/CMakeFiles/edit_cache.dir
-/home/blackdui/Hello-World/c_crash/build/CMakeFiles/rebuild_cache.dir

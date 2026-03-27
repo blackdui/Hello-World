@@ -1,8 +1,0 @@
-[
-{
-  "directory": "/home/blackdui/Hello-World/c_crash/build",
-  "command": "/usr/bin/cc    -pg -g -std=gnu99 -o CMakeFiles/main.dir/src/whatever.c.o -c /home/blackdui/Hello-World/c_crash/src/whatever.c",
-  "file": "/home/blackdui/Hello-World/c_crash/src/whatever.c",
-  "output": "CMakeFiles/main.dir/src/whatever.c.o"
-}
-]
