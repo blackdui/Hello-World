@@ -1,4 +1,5 @@
 #include <coroutine>
+#include <exception>
 #include <iostream>
 
 //co_await co_yield co_return关键字
@@ -23,7 +24,6 @@ class ReturnObject {
     public:
         class promise_type;
         using handle_type = std::coroutine_handle<promise_type>;
-
         ReturnObject(handle_type handle)
         {
             std::cout << __func__ << "\n";
@@ -31,41 +31,44 @@ class ReturnObject {
         }
         ~ReturnObject()
         {
-                std::cout << __func__ << "\n";
+            std::cout << __func__ << "\n";
+            m_handle.destroy();
         }
-
         class promise_type {
             public:
                 promise_type()
                 {
-                        std::cout << __func__ << "\n";
+                    std::cout << __func__ << "\n";
                 }
                 ~promise_type()
                 {
-                        std::cout << __func__ << "\n";
+                    std::cout << __func__ << "\n";
                 }
-
                 ReturnObject get_return_object()
                 {
                     std::cout << __func__ << "\n";
-                    auto handle = handle_type::from_promise(*this);
-                    return { handle };
+                    return { handle_type::from_promise(*this) };
                 }
 
                 std::suspend_never initial_suspend()
                 {
                     std::cout << __func__ << "\n";
-                    return std::suspend_never();
+                    // throw std::exception{};
+                    // 进程不正常结束，控制权交给main
+                    return {};
                 }
 
-                std::suspend_never final_suspend() noexcept
+                std::suspend_always final_suspend() noexcept
                 {
+                    //如果传递suspend_always
+                    //资源不会自动释放
                     std::cout << __func__ << "\n";
-                    return std::suspend_never();
+                    return {};
                 }
 
                 void unhandled_exception() {
 
+                    std::cout << __func__ << "\n";
                 }
 
                 void return_void()
@@ -73,6 +76,5 @@ class ReturnObject {
                     std::cout << __func__ << "\n";
                 }
         };
-
         handle_type m_handle;
 };

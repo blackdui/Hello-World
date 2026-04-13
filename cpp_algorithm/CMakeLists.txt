@@ -7,7 +7,7 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 set(CMAKE_BUILD_TYPE Debug)
 # add_executable(exercise2 src/data_structure/queue.cpp)
-add_executable(exercise2 ./src/coroutines/coroutine_para.cpp)
+add_executable(exercise2 ./src/coroutines/coroutine_destroy.cpp)
 
 # find_package(SDL3 CONFIG REQUIRED)
 # target_link_libraries(exercise2 PRIVATE SDL3::SDL3)
