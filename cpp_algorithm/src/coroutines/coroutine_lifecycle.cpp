@@ -84,6 +84,7 @@ coroutine func2()
 void func3()
 {
     //匿名成员变量s
+    //auto returnObject = lambda("marisa").name();
     auto returnObject = [ s = "string"s]() -> coroutine
     {
         std::cout << s << "\n";
