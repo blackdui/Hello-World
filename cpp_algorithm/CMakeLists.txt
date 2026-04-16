@@ -7,7 +7,7 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 set(CMAKE_BUILD_TYPE Debug)
 # add_executable(exercise2 src/data_structure/queue.cpp)
-add_executable(exercise2 ./src/coroutines/coroutine_awaiter_trans.cpp)
+add_executable(exercise2 ./src/coroutines/coroutine_awaitable.cpp)
 
 # add_executable(exercise2 ./src/coroutines/coroutine_is_stopped.cpp)
 
