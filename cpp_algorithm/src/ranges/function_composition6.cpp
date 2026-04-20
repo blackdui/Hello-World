@@ -12,15 +12,16 @@ int main()
                                         {"job",     143235}};
 
    auto bAtZero = [](const std::string& name) {
-       return name[0] == 'j';
+       return name[0] == 'b';
    };
 
-   for (const auto& name: std::views::keys(m)|
-                   // std::views::reverse |
+   /*for (const auto& name: std::views::keys(m)|
+                   std::views::reverse |
                    std::views::take(4) |
                    std::views::filter(bAtZero)) {
        std::cout << name << " ";
-   }
-   std::cout << "\n";
+   }*/
+    auto keys = std::views::keys(m);
+    auto reverse_view = std::views::reverse(keys);
     return 0;
 }
