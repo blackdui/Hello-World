@@ -1,0 +1,8 @@
+//声明为模块文件 全局模块
+module;
+#include <iostream>
+export module Student;
+void innerMethod() 
+{ 
+    std::cout << "innerMethod.\n";
+};
